@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Domain.Entities
+namespace CarBookProject.Application.Features.CQRS.Commands.BrandCommand
 {
-    public class Brand
+    public class CreateBrandCommand
     {
-        public int BrandID { get; set; }
         public string BrandName { get; set; }
-
     }
 }

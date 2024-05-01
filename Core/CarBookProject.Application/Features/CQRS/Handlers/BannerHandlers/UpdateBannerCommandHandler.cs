@@ -21,10 +21,11 @@ namespace CarBookProject.Application.Features.CQRS.Handlers.BannerHandlers
         public async Task Handle(UpdateBannerCommand command)
         {
             var values = await _repository.GetByIdAsync(command.BannerID);
-            command.VideoDescription = values.VideoDescription;
-            command.Title = values.Title;
-            command.Description = values.Description;
-            command.VideoUrl = values.VideoUrl;
+            values.Description = command.Description;
+            values.Title = command.Title;
+            values.VideoUrl = command.VideoUrl;
+            values.VideoDescription = command.VideoDescription;
+            await _repository.UpdateAsync(values);
         }
     }
 }

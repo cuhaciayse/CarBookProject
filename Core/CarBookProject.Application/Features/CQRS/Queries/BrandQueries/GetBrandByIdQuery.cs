@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Application.Features.CQRS.Queries.BannerQueries
+namespace CarBookProject.Application.Features.CQRS.Queries.BrandQueries
 {
-    public class GetBannerByIdQuery
+    public class GetBrandByIdQuery
     {
         public int Id { get; set; }
-        public GetBannerByIdQuery(int id)
+        public GetBrandByIdQuery(int id)
         {
             Id = id;
-        }
+        }     
 
     }
 }

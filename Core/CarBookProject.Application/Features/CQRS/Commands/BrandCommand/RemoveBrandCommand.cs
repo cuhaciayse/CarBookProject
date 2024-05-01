@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Application.Features.CQRS.Queries.BannerQueries
+namespace CarBookProject.Application.Features.CQRS.Commands.BrandCommand
 {
-    public class GetBannerByIdQuery
+    public class RemoveBrandCommand
     {
         public int Id { get; set; }
-        public GetBannerByIdQuery(int id)
+        public RemoveBrandCommand(int id)
         {
             Id = id;
         }

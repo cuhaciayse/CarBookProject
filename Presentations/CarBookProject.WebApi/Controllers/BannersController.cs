@@ -13,10 +13,10 @@ namespace CarBookProject.WebApi.Controllers
         private readonly CreateBannerCommandHandler _createBannerCommandHandler;
         private readonly UpdateBannerCommandHandler _updateBannerCommandHandler;
         private readonly RemoveBannerCommandHandler _removeBannerCommandHandler;
-        private readonly GetBannerIdQueryHandler _getBannerIdQueryHandler;
+        private readonly GetBannerByIdQueryHandler _getBannerIdQueryHandler;
         private readonly GetBannerQueryHandler _getBannerQueryHandler;
 
-        public BannersController(CreateBannerCommandHandler createBannerCommandHandler, UpdateBannerCommandHandler updateBannerCommandHandler, RemoveBannerCommandHandler removeBannerCommandHandler, GetBannerIdQueryHandler getBannerIdQueryHandler, GetBannerQueryHandler getBannerQueryHandler)
+        public BannersController(CreateBannerCommandHandler createBannerCommandHandler, UpdateBannerCommandHandler updateBannerCommandHandler, RemoveBannerCommandHandler removeBannerCommandHandler, GetBannerByIdQueryHandler getBannerIdQueryHandler, GetBannerQueryHandler getBannerQueryHandler)
         {
             _createBannerCommandHandler = createBannerCommandHandler;
             _updateBannerCommandHandler = updateBannerCommandHandler;

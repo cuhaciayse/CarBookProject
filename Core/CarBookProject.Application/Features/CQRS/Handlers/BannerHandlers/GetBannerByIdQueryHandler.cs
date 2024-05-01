@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace CarBookProject.Application.Features.CQRS.Handlers.BannerHandlers
 {
-    public class GetBannerIdQueryHandler
+    public class GetBannerByIdQueryHandler
     {
         private readonly IRepository<Banner> _repository;
 
-        public GetBannerIdQueryHandler(IRepository<Banner> repository)
+        public GetBannerByIdQueryHandler(IRepository<Banner> repository)
         {
             _repository = repository;
         }
