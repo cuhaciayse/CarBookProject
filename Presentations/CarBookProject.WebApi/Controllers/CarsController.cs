@@ -30,7 +30,7 @@ namespace CarBookProject.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> CarList()
         {
-            var values = _getCarQueryHandler.Handle();
+            var values = await _getCarQueryHandler.Handle();
             return Ok(values);
         }
 
