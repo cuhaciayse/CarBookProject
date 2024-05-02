@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarBookProject.Application.Features.CQRS.Results.BrandResult
 {
-    public class GetBrandIdQueryResult
+    public class GetBrandByIdQueryResult
     {
         public int BrandID { get; set; }
         public string BrandName { get; set; }
