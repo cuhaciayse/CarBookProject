@@ -4,6 +4,8 @@ using CarBookProject.Application.Features.CQRS.Handlers.BrandHandlers;
 using CarBookProject.Application.Features.CQRS.Handlers.CarHandlers;
 using CarBookProject.Application.Features.CQRS.Queries.BannerQueries;
 using CarBookProject.Application.Interfaces;
+using CarBookProject.Application.Interfaces.CarInterfaces;
+using CarBookProject.Domain.Entities;
 using CarBookProject.Persistence.Context;
 using CarBookProject.Persistence.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -13,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<CarBookContext>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
+builder.Services.AddScoped(typeof(ICarRepository),typeof(CarRepository));
 
 builder.Services.AddScoped<CreateAboutCommandHandler>();
 builder.Services.AddScoped<UpdateAboutCommandHandler>();
@@ -37,6 +40,7 @@ builder.Services.AddScoped<GetCarByIdQueryHandler>();
 builder.Services.AddScoped<CreateCarCommandHandler>();
 builder.Services.AddScoped<UpdateCarCommandHandler>();
 builder.Services.AddScoped<RemoveCarCommandHandler>();
+builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
 
 
 builder.Services.AddControllers();
