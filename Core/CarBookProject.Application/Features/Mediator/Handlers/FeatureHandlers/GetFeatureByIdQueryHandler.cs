@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Application.Features.Mediator.Handlers.FeatureHandler
+namespace CarBookProject.Application.Features.Mediator.Handlers.FeatureHandlers
 {
     public class GetFeatureByIdQueryHandler : IRequestHandler<GetFeatureByIdQuery, GetFeatureByIdQueryResult>
     {

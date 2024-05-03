@@ -4,14 +4,11 @@ using CarBookProject.Application.Features.CQRS.Handlers.BrandHandlers;
 using CarBookProject.Application.Features.CQRS.Handlers.CarHandlers;
 using CarBookProject.Application.Features.CQRS.Handlers.CategoryHandlers;
 using CarBookProject.Application.Features.CQRS.Handlers.ContactHandlers;
-using CarBookProject.Application.Features.CQRS.Queries.BannerQueries;
 using CarBookProject.Application.Interfaces;
 using CarBookProject.Application.Interfaces.CarInterfaces;
 using CarBookProject.Application.Services;
-using CarBookProject.Domain.Entities;
 using CarBookProject.Persistence.Context;
 using CarBookProject.Persistence.Repositories;
-using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,6 +53,8 @@ builder.Services.AddScoped<GetContactByIdQueryHandler>();
 builder.Services.AddScoped<CreateContactCommandHandler>();
 builder.Services.AddScoped<UpdateContactCommandHandler>();
 builder.Services.AddScoped<RemoveContactCommandHandler>();
+
+
 
 builder.Services.AddApplicationService(builder.Configuration);
 
