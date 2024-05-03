@@ -22,7 +22,7 @@ namespace CarBookProject.Application.Features.Mediator.Handlers.ServiceHandlers
 
         public async Task<GetServiceByIdQueryResult> Handle(GetServiceByIdQuery request, CancellationToken cancellationToken)
         {
-           var value = await _repository.GetByIdAsync(request.Id);
+            var value = await _repository.GetByIdAsync(request.Id);
             return new GetServiceByIdQueryResult
             {
                 ServiceID = value.ServiceID,
