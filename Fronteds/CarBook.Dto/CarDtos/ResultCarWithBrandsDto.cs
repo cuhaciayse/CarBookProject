@@ -1,13 +1,12 @@
-﻿using CarBookProject.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Application.Features.CQRS.Results.CarResult
+namespace CarBook.Dto.CarDtos
 {
-    public class GetCarWithBrandQueryResult
+    public class ResultCarWithBrandsDto
     {
         public int CarID { get; set; }
         public int BrandID { get; set; }

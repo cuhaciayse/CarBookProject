@@ -15,8 +15,8 @@ namespace CarBookProject.Domain.Entities
         public string CoverImageUrl { get; set; }
         public int Km { get; set; }
         public string Transmission { get; set; }  // vites türü
-        public string Seat { get; set; }  // koltuk sayısı
-        public string Luggage { get; set; } // bagaj
+        public byte Seat { get; set; }  // koltuk sayısı
+        public byte Luggage { get; set; } // bagaj
         public string Fuel { get; set; }  // yakıt türü
         public string BigImageUrl { get; set; }
         public List<CarDescription> CarDescriptions { get; set; }
