@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarBookProject.Persistence.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    [Migration("20240508160421_mig_author_blog")]
-    partial class mig_author_blog
+    [Migration("20240509181308_mig_add_table")]
+    partial class mig_add_table
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -115,9 +115,6 @@ namespace CarBookProject.Persistence.Migrations
                     b.Property<int>("AuthorID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BlogID1")
-                        .HasColumnType("int");
-
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
@@ -128,6 +125,10 @@ namespace CarBookProject.Persistence.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -135,8 +136,6 @@ namespace CarBookProject.Persistence.Migrations
                     b.HasKey("BlogID");
 
                     b.HasIndex("AuthorID");
-
-                    b.HasIndex("BlogID1");
 
                     b.HasIndex("CategoryID");
 
@@ -497,10 +496,6 @@ namespace CarBookProject.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CarBookProject.Domain.Entities.Blog", null)
-                        .WithMany("Blogs")
-                        .HasForeignKey("BlogID1");
-
                     b.HasOne("CarBookProject.Domain.Entities.Category", "Category")
                         .WithMany("Blogs")
                         .HasForeignKey("CategoryID")
@@ -570,11 +565,6 @@ namespace CarBookProject.Persistence.Migrations
                     b.Navigation("Car");
 
                     b.Navigation("Pricing");
-                });
-
-            modelBuilder.Entity("CarBookProject.Domain.Entities.Blog", b =>
-                {
-                    b.Navigation("Blogs");
                 });
 
             modelBuilder.Entity("CarBookProject.Domain.Entities.Car", b =>
