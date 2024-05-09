@@ -10,9 +10,9 @@ namespace CarBookProject.Application.Features.Mediator.Queries.BlogQueries
 {
     public class GetBlogBydQuery:IRequest<GetBlogByIdQueryResult>
     {
-        public GetBlogBydQuery(int ıd)
+        public GetBlogBydQuery(int id)
         {
-            Id = ıd;
+            Id = id;
         }
 
         public int Id { get; set; }

@@ -59,6 +59,7 @@ builder.Services.AddScoped<RemoveContactCommandHandler>();
 
 
 
+
 builder.Services.AddApplicationService(builder.Configuration);
 
 builder.Services.AddControllers();
