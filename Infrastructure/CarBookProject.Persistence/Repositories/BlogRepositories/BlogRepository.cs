@@ -22,12 +22,14 @@ namespace CarBookProject.Persistence.Repositories.BlogRepositories
 
         public List<Blog> GetAllBlogsWithAuthors()
         {
-            throw new NotImplementedException();
+            var values = _carcontext.Blogs.Include(x=>x.Author).ToList();
+            return values;  
         }
 
         public List<Blog> GetBlogByAuthorId(int id)
         {
-            throw new NotImplementedException();
+            var values = _carcontext.Blogs.Include(x=>x.AuthorID).ToList();
+            return values;
         }
 
         public List<Blog> GetLast3BlogsWithAuthors()
