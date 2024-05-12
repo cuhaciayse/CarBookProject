@@ -26,6 +26,7 @@ namespace CarBookProject.Persistence.Repositories
             return values;
         }
 
+
         public List<Car> GetLast5CarsWithBrand()
         {
             var values = _carcontext.Cars.Include(y=>y.Brand).OrderByDescending(x=>x.CarID).Take(5).ToList();  // Son 5 arabayı göstermek için
