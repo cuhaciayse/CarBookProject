@@ -55,7 +55,7 @@ namespace CarBookProject.WebApi.Controllers
         [HttpGet("GetTagClodByBlogId")]
         public async Task<IActionResult> GetTagClodByBlogId(int id)
         {
-            var values = await _mediator.Send(new GetTagCloudByIdQuery(id));
+            var values = await _mediator.Send(new GetTagCloudByBlogIdQuery(id));
             return Ok(values);  
         }
     }
