@@ -1,12 +1,13 @@
 ﻿@model GetBlogById
 <div class="col-md-8 ftco-animate">
-    <h2 class="mb-3">@Model.Title</h2>
-    <p>@Model.Description</p>
-    <p>
-        <img src="/carbook-master/images/image_5.jpg" alt="" class="img-fluid">
-    </p>
+        <h2 class="mb-3">@Model.Title</h2>
+        <p>@Model.Description</p>
+        <p>
+            <img src="/carbook-master/images/image_5.jpg" alt="" class="img-fluid">
+        </p>
+    
 
-    @await Component.InvokeAsync("_BlogDetailCloudTagByBlogComponentPartial")
+    @await Component.InvokeAsync("_BlogDetailCloudTagByBlogComponentPartial", new { id = ViewBag.blogid })
 
     @await Component.InvokeAsync("_BlogDetailsAuthorAboutComponentPartial")
 
