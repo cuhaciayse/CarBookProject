@@ -4,11 +4,11 @@ using Newtonsoft.Json;
 
 namespace CarBookProject.WebUI.ViewComponents.BlogViewComponents
 {
-    public class _BlogDetailCloudTagByBlogComponentPartial:ViewComponent
+    public class _BlogDetailsCloudTagByBlogComponentPartial:ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public _BlogDetailCloudTagByBlogComponentPartial(IHttpClientFactory httpClientFactory)
+        public _BlogDetailsCloudTagByBlogComponentPartial(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }

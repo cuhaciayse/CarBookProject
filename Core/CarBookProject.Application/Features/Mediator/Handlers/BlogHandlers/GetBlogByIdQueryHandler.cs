@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CarBookProject.Application.Features.Mediator.Handlers.BlogHandlers
 {
-    public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogBydQuery, GetBlogByIdQueryResult>
+    public class GetBlogByIdQueryHandler : IRequestHandler<GetBlogByIdQuery, GetBlogByIdQueryResult>
     {
         private readonly IRepository<Blog> _repository;
 
@@ -20,7 +20,7 @@ namespace CarBookProject.Application.Features.Mediator.Handlers.BlogHandlers
             _repository = repository;
         }
 
-        public async Task<GetBlogByIdQueryResult> Handle(GetBlogBydQuery request, CancellationToken cancellationToken)
+        public async Task<GetBlogByIdQueryResult> Handle(GetBlogByIdQuery request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetByIdAsync(request.Id);
             return new GetBlogByIdQueryResult

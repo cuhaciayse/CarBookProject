@@ -5,6 +5,7 @@ using CarBookProject.Application.Features.Mediator.Results.BlogResult;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UdemyCarBook.Application.Features.Mediator.Queries.BlogQueries;
 
 namespace CarBookProject.WebApi.Controllers
 {
@@ -29,7 +30,7 @@ namespace CarBookProject.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetBlog(int id)
         {
-            var value = await _mediator.Send(new GetBlogBydQuery(id));
+            var value = await _mediator.Send(new GetBlogByIdQuery(id));
             return Ok(value);
         }
 
@@ -71,7 +72,7 @@ namespace CarBookProject.WebApi.Controllers
         [HttpGet("GetBlogByAuthorId")]
         public async Task<IActionResult> GetBlogByAuthorId(int id)
         {
-            var values = await _mediator.Send(new GetBlogBydQuery(id));
+            var values = await _mediator.Send(new GetBlogByAuthorIdQuery(id));
             return Ok(values);
         }
     }
