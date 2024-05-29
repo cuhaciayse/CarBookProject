@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CarBookProject.Persistence.Repositories.CommentRepositories
 {
-    public class CommentRepository : IGenericRepository<Comment>
+    public class CommentRepository<T> : IGenericRepository<Comment>
     {
         private readonly CarBookContext _context;
 
