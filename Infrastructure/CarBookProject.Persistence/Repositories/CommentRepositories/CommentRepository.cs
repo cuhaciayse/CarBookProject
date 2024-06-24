@@ -26,8 +26,6 @@ namespace CarBookProject.Persistence.Repositories.CommentRepositories
 
         public List<Comment> GetAll()
         {
-            //return values = _context.Comments.ToList();
-
             return _context.Comments.Select(x => new Comment
             {
                 CommentID = x.CommentID,
@@ -35,7 +33,7 @@ namespace CarBookProject.Persistence.Repositories.CommentRepositories
                 CreatedDate = x.CreatedDate,
                 Description = x.Description,
                 Name = x.Name,
-            }).ToList();
+            }).ToList();  //ilişkisel tabloların hepsini getirmek yerine Comment sınıfındaki verileri getirir.
         }
 
         public Comment GetById(int id)
